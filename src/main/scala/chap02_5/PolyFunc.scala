@@ -25,7 +25,10 @@ object PolyFunc {
 
   def main(args: Array[String]): Unit ={
     println(findFirst(Array("tt", "result", "test"), "test"))
+
     def p[A](e:A): Boolean = { e.equals("test") }
+
+
     println(findFirstPoly(Array("tt", "result", "1test", "test"), p))
   }
 

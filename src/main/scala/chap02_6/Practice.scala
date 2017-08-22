@@ -8,9 +8,9 @@ object Practice {
 
   def uncurry[A, B, C](f: A => B => C) : (A,B) => C = {(a:A, b:B) => f(a)(b)}
 
-  def compose[A,B,C](f: B => C, g:A => B) : A => C = {(a:A)=>f(g(a))}
-
-
+  def compose[A,B,C](f: B => C, g:A => B) : A => C = {
+    (a:A)=>f(g(a))
+  }
 
 
   def main(args: Array[String]): Unit ={
@@ -24,8 +24,9 @@ object Practice {
     println("result :", result2)
 
 
-    def x (a:Int) : Int  = a+1
-    def y(b:Int) : Int = b*10
+    def x(a:Int) : Int = a + 1
+    def y(b:Int) : Int = b * 10
+
     val xAndThenY = x _ andThen y _
     println(" x andThen y : ", xAndThenY(1))
 
