@@ -29,12 +29,14 @@ object Practice {
     case _ => Cons(a, tail(l))
   }
 
+
   // 연습문제 3.4 n 개의 요소 drop 화
   def drop[A] (l:List[A], n: Int) : List[A] = n match{
     case 0 => l
     case n => drop(tail(l), n-1)
   }
 
+  // 연습문제 3.5 dropWhile
   def dropWhile[A](l:List[A], f:A => Boolean):List[A] = l match{
     case Cons(h,t) if f(h) => dropWhile(t, f)
     case _ => l
@@ -60,10 +62,13 @@ object Practice {
     println("dropped : ", dropeed)
 
 
-
     println("dropWhiled : ", dropWhile(onetwothreefor, (a:Int) => a<=3))
 
     println("dropWhile2 : ", dropWhile2(onetwothreefor)(a => a<=3))
 
+    println("getFirst: ", List.getFirst(List(1,2,3,4,5)))
+
+    println("sum Fold Left: !")
+    println("sum Fold Left: ", List.foldLeft(List(1,2,3,4,5), 0)(_ + _));
   }
 }

@@ -3,8 +3,11 @@ package chap02.chap02_5
 
 
 
+
 object Practice {
 
+
+  // 연습문제 2.2
   def isSorted[A](as:Array[A], ordered: (A,A) => Boolean ) : Boolean = {
     def go(n: Int): Boolean ={
       if(as.lengthCompare(n)==1) true
