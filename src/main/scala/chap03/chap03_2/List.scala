@@ -21,9 +21,12 @@ object List {
 
 
   def foldRight[A,B](as: List[A], z: B)(f: (A,B)=>B): B = as match{
-    case Nil => z
+    case Nil => {
+      println("foldRight 의 Nil! 리턴 :", z)
+      z
+    }
     case Cons(x,xs) => {
-      println("x :", x , ", xs: ", xs)
+      println("foldRight 의 x :", x , ", xs: ", xs)
       f(x, foldRight(xs,z)(f))
     }
   }

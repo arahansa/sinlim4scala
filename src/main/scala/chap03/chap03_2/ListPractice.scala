@@ -7,7 +7,7 @@ object ListPractice {
 
   def main(args: Array[String]): Unit = {
     println(List.sum2(List(1,2,3,4)))
-//    println(List.sum3(List(1,2,3,4)))
+    println("sum3 :", List.sum3(List(1,2,3,4)))
     println(List.product2(List(1.0, 2.0, 3.0)))
     println(List.product2(List(1.0, 0.0, 3.0, 4.0)))
 
